@@ -1,6 +1,6 @@
 Wish::Application.routes.draw do
-  get "wishes/index"
+  resources :wishes
   root 'wishes#index'
   get '/auth/:provider/callback', to: 'sessions#create'
-
+  get 'signout', to: 'sessions#destroy'
 end

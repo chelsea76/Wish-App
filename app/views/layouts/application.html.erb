@@ -7,13 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div>
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>">
       <%= value %>
     </div>
   <% end %>
+</div>  
 <ul class="nav navbar-nav">
   <li><%= link_to 'Twitter', '/auth/twitter' %></li>
+  <% if current_user.present? %>
+    <li><%= link_to 'Sign out', '/signout' %></li>
+  <% end %>
 </ul>
 <%= yield %>
 

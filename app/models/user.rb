@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	
+	has_many :my_wishes	
+	
   def self.from_omniauth(auth_hash)
   	user = User.where(uid: auth_hash['uid'], provider: auth_hash['provider']).first
   	unless user.present?
