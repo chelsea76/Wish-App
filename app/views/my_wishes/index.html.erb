@@ -1,0 +1,10 @@
+<% if @wishes.present? %>	
+  <table>
+		<% @wishes.each do |wish| %>
+		  Title : <%= wish.title%>
+		  Description: <%= wish.description%>
+		<% end %>
+	</table>
+<% else %>	
+  <div>No wishes available.</div>
+<% end %>
